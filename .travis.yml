@@ -16,7 +16,7 @@ after_success:
   # Log into docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push images to docker hub
-  - docker push jonakla/sample-app-3-client
+  - docker push jonakola/sample-app-3-client
   - docker push jonakola/sample-app-3-nginx
   - docker push jonakola/sample-app-3-server
   - docker push jonakola/sample-app-3-worker
