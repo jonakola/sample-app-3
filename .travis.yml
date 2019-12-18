@@ -20,3 +20,15 @@ after_success:
   - docker push jonakola/sample-app-3-nginx
   - docker push jonakola/sample-app-3-server
   - docker push jonakola/sample-app-3-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: sample-app-3
+  env: SampleApp3-env
+  bucket_name: elasticbeanstalk-us-east-2-243172748836
+  bucket_path: sample-app-3
+  on:
+    branch: master
+access_key_id: $AWS_ACCESS_KEY
+secret_access_key: $AWS_SECRET_KEY
